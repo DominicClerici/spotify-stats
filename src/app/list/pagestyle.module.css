@@ -1,0 +1,117 @@
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.dataContainer {
+  animation: slideIn 0.8s ease;
+}
+.trackContainer {
+  padding-block: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+@media (max-width: 799px) {
+  .trackContainer {
+    padding-block: 1rem;
+  }
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+.trackContainer div {
+  display: flex;
+  align-items: center;
+}
+.trackContainer * {
+  text-decoration: none;
+}
+.rank {
+  min-width: 2em;
+  color: var(--text-main);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+.artist {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+.name {
+  color: var(--text-main);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+.imageCont {
+  position: relative;
+  height: 63px;
+  width: 63px;
+  margin-right: 1rem;
+}
+@media (max-width: 799px) {
+  .imageCont {
+    width: 40px;
+    height: 40px;
+  }
+}
+.trackContainer img {
+  margin-right: 1rem;
+}
+.loading {
+  text-align: center;
+  color: var(--text-main);
+  font-size: var(--font-size-lg);
+}
+.itemListSelectors {
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 2rem;
+  padding: 1rem 0rem;
+  background-color: var(--background-main);
+}
+.itemListSelectors li a {
+  cursor: pointer;
+  transition: color 0.1s;
+  font-weight: 600;
+  font-family: var(--font-inter);
+  color: var(--text-accent);
+  font-size: var(--font-size-base);
+  position: relative;
+}
+.itemListSelectors li:hover a {
+  color: var(--text-main);
+}
+.itemListSelectors li a.selected {
+  transition: color 0.5s;
+  color: var(--highlight);
+}
+@keyframes intoView {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.itemListSelectors li a.selected::after {
+  animation: intoView 0.5s ease;
+  content: "";
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  background-color: var(--highlight);
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
