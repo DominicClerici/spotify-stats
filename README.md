@@ -19,7 +19,7 @@
 ## ⚙️Features:
 - Data updated live.
 - Easy login/logout.
-- Authentication handled with `Next-Auth.js`.
+- Authentication handled by `Next-Auth.js`.
 
 ##### 🔗 See my other work:
 > <a target="https://www.dominicclerici.com">https://www.dominicclerici.com</a>
